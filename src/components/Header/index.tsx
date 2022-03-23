@@ -1,6 +1,7 @@
 import {
   Button,
   ButtonContainer,
+  DateContainer,
   HeaderContainer,
   HeaderTitle,
   HeaderTitleBold,
@@ -25,7 +26,7 @@ const SearchField = (props: { label: string; icon: keyof typeof Icons }) => {
   const IconComponent = Icons[props.icon];
   return (
     <SearchFieldContainer>
-      <IconComponent color='#C4C4C4' />
+      <IconComponent color='#C4C4C4' size={20} />
 
       <SearchFieldLabel>{props.label}</SearchFieldLabel>
     </SearchFieldContainer>
@@ -38,9 +39,11 @@ export const Header = () => {
       <Title />
       <SearchBarContainer>
         <SearchField icon='IoLocationSharp' label='North Carolina, NC 90025' />
-        <SearchField icon='IoCalendarSharp' label='11/03/2021' />
-        <SearchField icon='IoCalendarSharp' label='12/12/2021' />
-        <SearchButton />
+        <DateContainer>
+          <SearchField icon='IoCalendarSharp' label='11/03/2021' />
+          <SearchField icon='IoCalendarSharp' label='12/12/2021' />
+        </DateContainer>
+        <SearchButton size={21} />
       </SearchBarContainer>
       <ButtonContainer>
         <Button>Sign up</Button>
