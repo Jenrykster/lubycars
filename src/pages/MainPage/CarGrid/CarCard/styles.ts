@@ -35,8 +35,14 @@ export const HiddenMessage = styled(TitleBold)`
   margin-top: auto;
 `;
 
+export const ImageContainer = styled.div`
+  display: flex;
+  align-items: center;
+  height: 100%;
+`;
 export const CarImage = styled.img`
-  width: 90%;
+  width: 95%;
+  align-items: center;
   transition: 0.15s ease-in-out;
 `;
 
@@ -55,17 +61,19 @@ export const CarCardGradient = styled.div`
   display: flex;
   background: linear-gradient(52deg, #a1a7f4 0%, #e6d3f1 100%);
   border-radius: 20px;
+  height: 100%;
 `;
 
 export const CarCardContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: fit-content;
+  justify-content: center;
   background-color: #f8f8fa;
+  width: 100%;
   opacity: 95%;
   border-radius: 20px;
-  padding: 1.5rem;
+  padding: 0.9rem 1.15rem;
   transition: all 0.4s ease-in-out;
   &:hover {
     cursor: pointer;

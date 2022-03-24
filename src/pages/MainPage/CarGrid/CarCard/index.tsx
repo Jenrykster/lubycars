@@ -4,6 +4,7 @@ import {
   CardData,
   CarImage,
   HiddenMessage,
+  ImageContainer,
   PriceContainer,
   ThreeDots,
   TitleBold,
@@ -30,18 +31,25 @@ const Title = (props: { brand: string; model: string }) => {
   );
 };
 
-export const CarCard = (props: { image: string }) => {
+export const CarCard = (props: {
+  image: string;
+  brand: string;
+  model: string;
+  price: number;
+}) => {
   return (
     <CarCardGradient>
       <CarCardContainer>
         <CardData>
-          <Title brand='Ferrari' model='CALIFORNIA' />
+          <Title brand={props.brand} model={props.model} />
           <ThreeDots size={30} />
         </CardData>
-        <CarImage src={props.image} />
+        <ImageContainer>
+          <CarImage src={props.image} />
+        </ImageContainer>
         <CardData>
           <HiddenMessage size={1}>Book Now</HiddenMessage>
-          <Price value={10} />
+          <Price value={props.price} />
         </CardData>
       </CarCardContainer>
     </CarCardGradient>

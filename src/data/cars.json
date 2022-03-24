@@ -18,7 +18,7 @@
       "id": 3,
       "brand": "BMW",
       "model": "M1 COMPETITION",
-      "picture": "alfa-romeo/4c-spider.png",
+      "picture": "bmw/m1-competition.png",
       "price": 825
     },
     {
@@ -32,7 +32,7 @@
       "id": 5,
       "brand": "Chevrolet",
       "model": "CORVETT",
-      "picture": "alfa-romeo/4c-spider.png",
+      "picture": "chevrolet/corvett.png",
       "price": 925
     },
     {
