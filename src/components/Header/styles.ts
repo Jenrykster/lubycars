@@ -29,6 +29,10 @@ export const SearchBarContainer = styled.div`
   width: 50%;
   border-radius: 18px;
   padding: 5px 10px 5px 2rem;
+
+  @media (max-width: 900px) {
+    width: 30%;
+  }
 `;
 
 export const SearchFieldContainer = styled.div`
@@ -41,6 +45,13 @@ export const SearchFieldLabel = styled.p`
   color: #656469;
   padding-bottom: 1px; // Compensate for the svg alignment issues
   margin: 2px;
+
+  @media (max-width: 1000px) {
+    font-size: 0.9rem;
+  }
+  @media (max-width: 900px) {
+    display: none;
+  }
 `;
 
 export const SearchButton = styled(IoSearchSharp)`
@@ -66,6 +77,6 @@ export const Button = styled.button<{ border?: boolean }>`
 export const DateContainer = styled.div`
   display: flex;
   flex-direction: row;
-  width: 35%;
+  width: 42%;
   justify-content: space-between;
 `;

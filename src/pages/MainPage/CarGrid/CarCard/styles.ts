@@ -4,8 +4,8 @@ export const CarCardContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 17rem;
-  height: 12rem;
+  width: 100%;
+  height: 100%;
   background-color: #f8f8fa;
   border-radius: 20px;
   padding: 1rem;
