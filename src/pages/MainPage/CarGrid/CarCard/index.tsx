@@ -1,9 +1,11 @@
-import { BsThreeDots } from 'react-icons/bs';
 import {
   CarCardContainer,
-  CardHeader,
+  CarCardGradient,
+  CardData,
   CarImage,
+  HiddenMessage,
   PriceContainer,
+  ThreeDots,
   TitleBold,
   TitleContainer,
   TitleText,
@@ -30,13 +32,18 @@ const Title = (props: { brand: string; model: string }) => {
 
 export const CarCard = (props: { image: string }) => {
   return (
-    <CarCardContainer>
-      <CardHeader>
-        <Title brand='Ferrari' model='CALIFORNIA' />
-        <BsThreeDots size={30} color='#C8C8CA' />
-      </CardHeader>
-      <CarImage src={props.image} />
-      <Price value={10} />
-    </CarCardContainer>
+    <CarCardGradient>
+      <CarCardContainer>
+        <CardData>
+          <Title brand='Ferrari' model='CALIFORNIA' />
+          <ThreeDots size={30} />
+        </CardData>
+        <CarImage src={props.image} />
+        <CardData>
+          <HiddenMessage size={1}>Book Now</HiddenMessage>
+          <Price value={10} />
+        </CardData>
+      </CarCardContainer>
+    </CarCardGradient>
   );
 };
