@@ -1,0 +1,88 @@
+{
+  "cars": [
+    {
+      "brand": "Alfa Romeo",
+      "model": "4C SPIDER",
+      "picture": "alfa-romeo/4c-spider.png",
+      "price": 825
+    },
+    {
+      "brand": "Bentley",
+      "model": "CONTINENTAL GT",
+      "picture": "bentley/continental-gt.png",
+      "price": 825
+    },
+    {
+      "brand": "BMW",
+      "model": "M1 COMPETITION",
+      "picture": "alfa-romeo/4c-spider.png",
+      "price": 825
+    },
+    {
+      "brand": "Bugatti",
+      "model": "VEYRON SPYDER",
+      "picture": "bugatti/veyron-spyder.png",
+      "price": 925
+    },
+    {
+      "brand": "Chevrolet",
+      "model": "CORVETT",
+      "picture": "alfa-romeo/4c-spider.png",
+      "price": 925
+    },
+    {
+      "brand": "Ferrari",
+      "model": "CALIFORNIA",
+      "picture": "ferrari/california.png",
+      "price": 725
+    },
+    {
+      "brand": "Lamborghini",
+      "model": "AVENTADOR",
+      "picture": "lamborghini/aventador.png",
+      "price": 925
+    },
+    {
+      "brand": "Mclaren",
+      "model": "P1 GTR",
+      "picture": "mclaren/p1gtr.png",
+      "price": 925
+    },
+    {
+      "brand": "Mercedes Benz",
+      "model": "AMG GTS",
+      "picture": "mercedes-benz/amg-gts.png",
+      "price": 725
+    },
+    {
+      "brand": "Porsche",
+      "model": "911 GT3 RS",
+      "picture": "porsche/911-gt3-rs.png",
+      "price": 825
+    },
+    {
+      "brand": "Porsche",
+      "model": "911 TURBO S",
+      "picture": "porsche/911-turbo-s.png",
+      "price": 725
+    },
+    {
+      "brand": "Porsche",
+      "model": "911 TURBO S",
+      "picture": "porsche/911-turbo-s-orange.png",
+      "price": 725
+    },
+    {
+      "brand": "Porsche",
+      "model": "911 TURBO S",
+      "picture": "porsche/911-turbo-s-gray.png",
+      "price": 725
+    },
+    {
+      "brand": "Rolls-Royce",
+      "model": "WRAITH",
+      "picture": "rolls-royce/wraith.png",
+      "price": 725
+    }
+  ]
+}
