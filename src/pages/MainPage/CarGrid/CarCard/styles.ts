@@ -18,6 +18,7 @@ export const TitleText = styled.p<{ size?: number }>`
   font-weight: 200;
   font-size: ${(props) => (props.size ? props.size + 'rem' : '1.25rem')};
   margin-top: auto;
+  white-space: nowrap;
 `;
 
 export const TitleBold = styled.p<{ size?: number }>`
