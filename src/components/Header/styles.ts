@@ -26,7 +26,7 @@ export const SearchBarContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   background-color: #f3f1fc;
-  width: 50%;
+  width: 40%;
   border-radius: 18px;
   padding: 5px 10px 5px 2rem;
 
