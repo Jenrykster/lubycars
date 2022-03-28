@@ -5,34 +5,45 @@ export const CarouselContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   width: 95%;
-  background-color: blue;
+  height: 200px;
+
+  @media (max-width: 850px) {
+    width: 75%;
+  }
 `;
 
 export const CarouselSpinner = styled.div`
   display: flex;
-  background-color: greenyellow;
   width: 85%;
   justify-content: center;
-  overflow-x: hidden;
+  overflow: hidden;
+
+  @media (max-width: 850px) {
+    width: 60%;
+  }
 `;
 export const CarouselDisplay = styled.div`
   display: grid;
   width: 300px;
   align-items: center;
-  background-color: red;
 `;
 
-export enum Positions {
-  left = '-105%',
-  right = '135%',
-  center = '0%',
-}
 export const CarouselImage = styled.img<{
-  position: 'left' | 'right' | 'center';
+  position: number;
+  isSelected?: boolean;
 }>`
   grid-row: 1;
   grid-column: 1;
   transition: 0.2s ease;
-  width: ${(props) => (props.position === 'center' ? '300px' : '250px')};
-  transform: ${(props) => `translateX(${Positions[props.position]})`};
+  width: 100%;
+  transform: ${(props) =>
+    `translateX(${props.position * 110}%) ${
+      props.isSelected ? 'scale(1.25)' : 'scale(0.85)'
+    }`};
+
+  @media (max-width: 850px) {
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+  }
 `;
