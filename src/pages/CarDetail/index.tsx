@@ -11,6 +11,7 @@ import {
 } from './styles';
 import { Car } from '../../shared/types';
 import { CarImage } from '../MainPage/CarGrid/CarCard/styles';
+import { ColorCarousel } from './ColorCarousel';
 
 const CAR_DATA: { cars: Car[] } = require('../../data/cars.json');
 const carImages = require.context('../../assets/cars', true);
@@ -58,6 +59,7 @@ export const CarDetail = () => {
       <CarInformationBody>
         <CarImage src={carImages('./ferrari/colors/red-big.png')} />
       </CarInformationBody>
+      <ColorCarousel />
     </CarDetailContainer>
   );
 };
