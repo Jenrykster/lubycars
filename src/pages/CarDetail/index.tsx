@@ -8,9 +8,9 @@ import {
   LightText,
   CarInfoContainer,
   CarInformationBody,
+  CarPicture,
 } from './styles';
 import { Car } from '../../shared/types';
-import { CarImage } from '../MainPage/CarGrid/CarCard/styles';
 import { ColorCarousel } from './ColorCarousel';
 
 const CAR_DATA: { cars: Car[] } = require('../../data/cars.json');
@@ -19,7 +19,7 @@ const carImages = require.context('../../assets/cars', true);
 const Title = (props: { name: string; price: number }) => {
   return (
     <div>
-      <BoldText>{props.name}</BoldText>
+      <BoldText size={1.6}>{props.name}</BoldText>
       <LightText>${props.price}/day</LightText>
     </div>
   );
@@ -28,7 +28,7 @@ const Title = (props: { name: string; price: number }) => {
 const ColorInfo = (props: { color: string; number: number }) => {
   return (
     <ColorInfoContainer>
-      <BoldText>{props.number.toString().padStart(2, '0')}</BoldText>
+      <BoldText size={2}>{props.number.toString().padStart(2, '0')}</BoldText>
       <LightText size='1.5rem'>{props.color}</LightText>
     </ColorInfoContainer>
   );
@@ -57,7 +57,7 @@ export const CarDetail = () => {
         <ColorInfo color='Yellow' number={2} />
       </CarInformationHeader>
       <CarInformationBody>
-        <CarImage src={carImages('./ferrari/colors/red-big.png')} />
+        <CarPicture src={carImages('./ferrari/colors/red-big.png')} />
       </CarInformationBody>
       <ColorCarousel />
     </CarDetailContainer>

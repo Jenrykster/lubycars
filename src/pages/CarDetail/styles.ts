@@ -4,7 +4,14 @@ export const CarDetailContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 1rem 4rem;
+  padding: 0.2rem 4rem;
+  @media (max-width: 800px) {
+    height: 80vh;
+    justify-content: space-between;
+  }
+  @media (max-width: 1000px) {
+    padding: 0rem 3rem;
+  }
 `;
 
 export const CarInformationHeader = styled.div`
@@ -23,14 +30,18 @@ export const CarInfoContainer = styled.div`
 `;
 
 export const CarLogo = styled.img`
+  width: 20%;
   margin: 1rem;
 `;
 
-export const BoldText = styled.p`
+export const BoldText = styled.p<{ size: number }>`
   color: #313136;
   font-weight: 700;
-  font-size: 2rem;
+  font-size: ${(props) => props.size + 'rem'};
   margin: 0;
+  @media (max-width: 1100px) {
+    font-size: ${(props) => props.size / 1.4 + 'rem'};
+  }
 `;
 
 export const LightText = styled.p<{ size?: string }>`
@@ -46,11 +57,33 @@ export const ColorInfoContainer = styled.div`
   align-items: center;
   margin-top: 5rem;
   margin-right: 7.5rem;
+  @media (max-width: 800px) {
+    margin-right: 2rem;
+  }
 `;
 
 export const CarInformationBody = styled.div`
   display: flex;
-  margin-top: -4rem;
+  margin-top: -7.2rem;
+  justify-content: center;
+
+  @media (max-width: 1100px) {
+    margin-top: -5rem;
+  }
+  @media (max-width: 800px) {
+    margin-top: -2rem;
+  }
 `;
 
-export const CarPicture = styled.img``;
+export const CarPicture = styled.img`
+  width: 80%;
+  @media (max-width: 1100px) {
+    width: 75%;
+  }
+  @media (max-width: 800px) {
+    width: 86%;
+  }
+  @media (max-width: 600px) {
+    width: 100%;
+  }
+`;

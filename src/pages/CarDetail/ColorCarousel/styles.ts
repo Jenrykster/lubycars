@@ -35,7 +35,7 @@ export const CarouselImage = styled.img<{
   grid-row: 1;
   grid-column: 1;
   transition: 0.2s ease;
-  width: 100%;
+  width: 85%;
   transform: ${(props) =>
     `translateX(${props.position * 110}%) ${
       props.isSelected ? 'scale(1.25)' : 'scale(0.85)'
