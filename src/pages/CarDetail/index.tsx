@@ -12,6 +12,7 @@ import {
 } from './styles';
 import { Car } from '../../shared/types';
 import { ColorCarousel } from './ColorCarousel';
+import { useState } from 'react';
 
 const CAR_DATA: { cars: Car[] } = require('../../data/cars.json');
 const carImages = require.context('../../assets/cars', true);
@@ -43,6 +44,7 @@ export const CarDetail = () => {
     }
     return false;
   });
+  const [selectedColor, setSelectedColor] = useState(selectedCar?.colors[1]);
 
   return (
     <CarDetailContainer>
@@ -54,12 +56,21 @@ export const CarDetail = () => {
             price={selectedCar!.price}
           />
         </CarInfoContainer>
-        <ColorInfo color='Yellow' number={2} />
+        <ColorInfo
+          color={selectedColor!.color}
+          number={0 + selectedColor!.id}
+        />
       </CarInformationHeader>
       <CarInformationBody>
-        <CarPicture src={carImages('./ferrari/colors/red-big.png')} />
+        <CarPicture src={carImages(selectedColor!.pics[1])} />
       </CarInformationBody>
-      <ColorCarousel />
+      <ColorCarousel
+        onSelectedColorChange={(sel) => {
+          setSelectedColor(
+            selectedCar?.colors.find((color) => color.id === sel)
+          );
+        }}
+      />
     </CarDetailContainer>
   );
 };

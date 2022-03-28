@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { ArrowButton } from '../../../components';
 import { Color } from '../../../shared/types';
 import {
@@ -39,27 +39,33 @@ const generateInitialPositions = () => {
   return positions;
 };
 
-export const ColorCarousel = (props: { colorList?: Color[] }) => {
-  const [selectedColor, setSelectedColor] = useState(1);
-
+export const ColorCarousel = (props: {
+  colorList?: Color[];
+  onSelectedColorChange: (selection: number) => void;
+}) => {
   const [positions, setPositions] = useState(generateInitialPositions());
 
   const rotate = (direction: 'left' | 'right') => {
     if (direction === 'right') {
-      setSelectedColor((prev) => (prev < 3 ? prev + 1 : 1));
+      setPositions((prev) => {
+        return prev.map((pos) => {
+          const newPos = pos.pos > -1 ? pos.pos - 1 : 1;
+
+          return { id: pos.id, pos: newPos };
+        });
+      });
+    } else {
       setPositions((prev) => {
         return prev.map((pos) => {
           const newPos = pos.pos < 1 ? pos.pos + 1 : -1;
           return { id: pos.id, pos: newPos };
         });
       });
-    } else {
-      setSelectedColor((prev) => prev - 1);
     }
-    console.log(selectedColor);
-    console.log(positions);
   };
-
+  useEffect(() => {
+    props.onSelectedColorChange(positions.find((pos) => pos.pos === 0)!.id);
+  }, [positions, props]);
   const getPosition = (id: number) => {
     return positions.find((posData) => posData.id === id)!.pos;
   };

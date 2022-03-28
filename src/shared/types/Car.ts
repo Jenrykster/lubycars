@@ -1,3 +1,5 @@
+import { Color } from '.';
+
 export type Car = {
   id: number;
   brand: string;
@@ -5,4 +7,5 @@ export type Car = {
   model: string;
   picture: string;
   price: number;
+  colors: Color[];
 };
