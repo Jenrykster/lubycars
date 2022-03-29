@@ -10,6 +10,7 @@ export const CarGrid = (props: { cars: Car[] }) => {
       return (
         <CarCard
           key={carData.id}
+          id={carData.id}
           image={carImages('./' + carData.picture)}
           brand={carData.brand}
           model={carData.model}

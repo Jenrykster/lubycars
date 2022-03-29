@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import {
   CarCardContainer,
   CarCardGradient,
@@ -6,6 +7,7 @@ import {
   HiddenMessage,
   ImageContainer,
   PriceContainer,
+  PriceLabel,
   ThreeDots,
   TitleBold,
   TitleContainer,
@@ -17,7 +19,7 @@ const Price = (props: { value: number }) => {
     <PriceContainer>
       <TitleBold>$</TitleBold>
       <TitleBold size={1.5}>{props.value}</TitleBold>
-      <TitleText size={1}>/day</TitleText>
+      <PriceLabel size={1}>/day</PriceLabel>
     </PriceContainer>
   );
 };
@@ -36,9 +38,11 @@ export const CarCard = (props: {
   brand: string;
   model: string;
   price: number;
+  id: number;
 }) => {
+  const nav = useNavigate();
   return (
-    <CarCardGradient>
+    <CarCardGradient onClick={() => nav('/car/' + props.id)}>
       <CarCardContainer>
         <CardData>
           <Title brand={props.brand} model={props.model} />

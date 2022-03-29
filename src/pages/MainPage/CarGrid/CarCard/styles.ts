@@ -19,8 +19,11 @@ export const TitleText = styled.p<{ size?: number }>`
   font-size: ${(props) => (props.size ? props.size + 'rem' : '1.25rem')};
   margin-top: auto;
   white-space: nowrap;
+  text-transform: uppercase;
 `;
-
+export const PriceLabel = styled(TitleText)`
+  text-transform: none;
+`;
 export const TitleBold = styled.p<{ size?: number }>`
   margin: 0;
   font-weight: 800;

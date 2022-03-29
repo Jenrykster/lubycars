@@ -12,10 +12,12 @@ import {
 } from './styles';
 
 import * as Icons from 'react-icons/io5';
+import { useNavigate } from 'react-router-dom';
 
 const Title = () => {
+  const nav = useNavigate();
   return (
-    <HeaderTitle>
+    <HeaderTitle onClick={() => nav('/')}>
       <HeaderTitleBold>EXOTIC </HeaderTitleBold>
       CARS
     </HeaderTitle>
