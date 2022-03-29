@@ -13,4 +13,7 @@ export const CarGridContainer = styled.div`
   @media (max-width: 1000px) {
     grid-template-columns: 1fr 1fr;
   }
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+  }
 `;
