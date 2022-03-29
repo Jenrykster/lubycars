@@ -17,6 +17,7 @@ import { Car } from '../../shared/types';
 import { ColorCarousel } from './ColorCarousel';
 import { useEffect, useRef, useState } from 'react';
 import { BsArrowLeft, BsArrowRight } from 'react-icons/bs';
+import { TransitionWrapper } from '../../components';
 
 const CAR_DATA: { cars: Car[] } = require('../../data/cars.json');
 const carImages = require.context('../../assets/cars', true);
@@ -79,38 +80,40 @@ export const CarDetail = () => {
   }, [selectedColor]);
 
   return (
-    <CarDetailContainer>
-      <CarInformationHeader>
-        <CarInfoContainer>
-          <CarLogo src={carImages(selectedCar!.logo)} />
-          <Title
-            name={selectedCar!.brand + ' ' + selectedCar!.model}
-            price={selectedCar!.price}
+    <TransitionWrapper>
+      <CarDetailContainer>
+        <CarInformationHeader>
+          <CarInfoContainer>
+            <CarLogo src={carImages(selectedCar!.logo)} />
+            <Title
+              name={selectedCar!.brand + ' ' + selectedCar!.model}
+              price={selectedCar!.price}
+            />
+          </CarInfoContainer>
+          <ColorInfo
+            color={selectedColor!.color}
+            number={0 + selectedColor!.id}
+            transitioning={isTransitioning}
           />
-        </CarInfoContainer>
-        <ColorInfo
-          color={selectedColor!.color}
-          number={0 + selectedColor!.id}
-          transitioning={isTransitioning}
+        </CarInformationHeader>
+        <CarInformationBody>
+          <GoBackButtonContainer onClick={() => nav('/')}>
+            <BsArrowLeft />
+            <ButtonText color='#313136'>Back to catalog</ButtonText>
+          </GoBackButtonContainer>
+          <CarPicture src={actualCarImage} transitioning={isTransitioning} />
+        </CarInformationBody>
+        <BookButtonContainer
+          onClick={() => alert('Booked car ' + selectedCar?.model)}
+        >
+          <ButtonText color='white'>Book now</ButtonText>
+          <BsArrowRight color='white' />
+        </BookButtonContainer>
+        <ColorCarousel
+          colorList={selectedCar!.colors}
+          onSelectedColorChange={changeCarInfo}
         />
-      </CarInformationHeader>
-      <CarInformationBody>
-        <GoBackButtonContainer onClick={() => nav('/')}>
-          <BsArrowLeft />
-          <ButtonText color='#313136'>Back to catalog</ButtonText>
-        </GoBackButtonContainer>
-        <CarPicture src={actualCarImage} transitioning={isTransitioning} />
-      </CarInformationBody>
-      <BookButtonContainer
-        onClick={() => alert('Booked car ' + selectedCar?.model)}
-      >
-        <ButtonText color='white'>Book now</ButtonText>
-        <BsArrowRight color='white' />
-      </BookButtonContainer>
-      <ColorCarousel
-        colorList={selectedCar!.colors}
-        onSelectedColorChange={changeCarInfo}
-      />
-    </CarDetailContainer>
+      </CarDetailContainer>
+    </TransitionWrapper>
   );
 };
