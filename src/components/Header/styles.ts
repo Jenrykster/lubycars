@@ -16,6 +16,9 @@ export const HeaderContainer = styled.div`
 export const HeaderTitle = styled.p`
   font-size: 1rem;
   font-weight: 400;
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 export const HeaderTitleBold = styled.b`
@@ -46,6 +49,14 @@ export const SearchFieldContainer = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+  svg:hover {
+    cursor: pointer;
+    path {
+      transition: 0.1s ease;
+      transform: scale(1.05);
+      color: #7b89f4;
+    }
+  }
 `;
 
 export const SearchFieldLabel = styled.p`
@@ -75,6 +86,10 @@ export const ButtonContainer = styled.div`
     display: flex;
     justify-content: center;
   }
+  @media (max-width: 400px) {
+    flex-direction: column;
+    margin: 5px;
+  }
 `;
 
 export const Button = styled.button<{ border?: boolean }>`
@@ -85,6 +100,12 @@ export const Button = styled.button<{ border?: boolean }>`
   font-weight: 600;
   font-size: 0.9rem;
   background-color: transparent;
+
+  &:hover {
+    cursor: pointer;
+    color: ${(props) => (props.border ? 'white' : '#7B89F4')};
+    background-color: ${(props) => (props.border ? '#7B89F4' : 'transparent')};
+  }
 `;
 
 export const DateContainer = styled.div`

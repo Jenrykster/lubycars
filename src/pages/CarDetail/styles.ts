@@ -12,6 +12,9 @@ export const CarDetailContainer = styled.div`
   @media (max-width: 1000px) {
     padding: 0rem 3rem;
   }
+  @media (max-width: 5000px) {
+    padding: 0rem 2rem;
+  }
 `;
 
 export const CarInformationHeader = styled.div`
@@ -62,6 +65,9 @@ export const ColorInfoContainer = styled.div<{ transitioning?: boolean }>`
 
   @media (max-width: 800px) {
     margin-right: 2rem;
+  }
+  @media (max-width: 5000px) {
+    margin-right: 0.5rem;
   }
 `;
 
