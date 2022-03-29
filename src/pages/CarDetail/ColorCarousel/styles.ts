@@ -6,9 +6,13 @@ export const CarouselContainer = styled.div`
   justify-content: space-between;
   width: 95%;
   height: 200px;
-
+  user-select: none;
   @media (max-width: 850px) {
     width: 75%;
+  }
+  @media (max-width: 850px) {
+    width: 100%;
+    min-width: 250px;
   }
 `;
 

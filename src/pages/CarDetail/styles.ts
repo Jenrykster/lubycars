@@ -51,12 +51,15 @@ export const LightText = styled.p<{ size?: string }>`
   margin: 0;
 `;
 
-export const ColorInfoContainer = styled.div`
+export const ColorInfoContainer = styled.div<{ transitioning?: boolean }>`
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 5rem;
   margin-right: 7.5rem;
+  transition: 0.2s ease-in-out;
+  transform: ${(props) => (props.transitioning ? 'scaleX(0)' : 'scaleX(1)')};
+
   @media (max-width: 800px) {
     margin-right: 2rem;
   }
@@ -75,15 +78,23 @@ export const CarInformationBody = styled.div`
   }
 `;
 
-export const CarPicture = styled.img`
-  width: 80%;
+export const CarPicture = styled.img<{ transitioning?: boolean }>`
+  transition: 0.5s ease;
+  width: 100%;
+  height: 330px;
+  min-width: 200px;
+  min-height: 150px;
+  opacity: ${(props) => (props.transitioning ? '0%' : '100%')};
   @media (max-width: 1100px) {
-    width: 75%;
+    height: 280px;
   }
   @media (max-width: 800px) {
-    width: 86%;
+    height: 200px;
   }
   @media (max-width: 600px) {
     width: 100%;
+    height: 100%;
+    min-width: 250px;
+    min-height: 125px;
   }
 `;

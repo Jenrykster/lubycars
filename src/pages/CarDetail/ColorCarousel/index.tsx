@@ -10,26 +10,8 @@ import {
 
 const carImages = require.context('../../../assets/cars', true);
 
-const COLOR_DATA = [
-  {
-    id: 1,
-    color: 'Red',
-    pic: './ferrari/colors/red.png',
-  },
-  {
-    id: 2,
-    color: 'Yellow',
-    pic: './ferrari/colors/yellow.png',
-  },
-  {
-    id: 3,
-    color: 'Gray',
-    pic: './ferrari/colors/gray.png',
-  },
-];
-
-const generateInitialPositions = () => {
-  const startPosition = Math.floor(3 / 2);
+const generateInitialPositions = (listLength: number) => {
+  const startPosition = Math.floor(listLength / 2);
   const positions = [];
   let colorId = 1;
   for (let i = -startPosition; i <= startPosition; i++) {
@@ -40,10 +22,12 @@ const generateInitialPositions = () => {
 };
 
 export const ColorCarousel = (props: {
-  colorList?: Color[];
+  colorList: Color[];
   onSelectedColorChange: (selection: number) => void;
 }) => {
-  const [positions, setPositions] = useState(generateInitialPositions());
+  const [positions, setPositions] = useState(
+    generateInitialPositions(props.colorList.length)
+  );
 
   const rotate = (direction: 'left' | 'right') => {
     if (direction === 'right') {
@@ -70,11 +54,11 @@ export const ColorCarousel = (props: {
     return positions.find((posData) => posData.id === id)!.pos;
   };
   const generateCarousel = () => {
-    return COLOR_DATA.map((color) => {
+    return props.colorList.map((color) => {
       return (
         <CarouselImage
           key={color.id}
-          src={carImages(color.pic)}
+          src={carImages(color.pics[0])}
           position={getPosition(color.id)}
           isSelected={getPosition(color.id) === 0}
         />
