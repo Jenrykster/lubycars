@@ -14,6 +14,10 @@ export const CarouselContainer = styled.div`
     width: 100%;
     min-width: 250px;
   }
+  @media (max-width: 700px) {
+    width: 85%;
+    min-width: 100px;
+  }
 `;
 
 export const CarouselSpinner = styled.div`

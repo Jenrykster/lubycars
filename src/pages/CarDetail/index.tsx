@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import {
   CarDetailContainer,
   CarInformationHeader,
@@ -9,10 +9,14 @@ import {
   CarInfoContainer,
   CarInformationBody,
   CarPicture,
+  ButtonText,
+  GoBackButtonContainer,
+  BookButtonContainer,
 } from './styles';
 import { Car } from '../../shared/types';
 import { ColorCarousel } from './ColorCarousel';
 import { useEffect, useRef, useState } from 'react';
+import { BsArrowLeft, BsArrowRight } from 'react-icons/bs';
 
 const CAR_DATA: { cars: Car[] } = require('../../data/cars.json');
 const carImages = require.context('../../assets/cars', true);
@@ -49,6 +53,7 @@ export const CarDetail = () => {
     return false;
   });
   const firstRun = useRef(true);
+  const nav = useNavigate();
   const [selectedColor, setSelectedColor] = useState(selectedCar?.colors[1]);
   const [actualCarImage, setActualCarImage] = useState(
     carImages(selectedColor!.pics[1])
@@ -90,8 +95,18 @@ export const CarDetail = () => {
         />
       </CarInformationHeader>
       <CarInformationBody>
+        <GoBackButtonContainer onClick={() => nav('/')}>
+          <BsArrowLeft />
+          <ButtonText color='#313136'>Back to catalog</ButtonText>
+        </GoBackButtonContainer>
         <CarPicture src={actualCarImage} transitioning={isTransitioning} />
       </CarInformationBody>
+      <BookButtonContainer
+        onClick={() => alert('Booked car ' + selectedCar?.model)}
+      >
+        <ButtonText color='white'>Book now</ButtonText>
+        <BsArrowRight color='white' />
+      </BookButtonContainer>
       <ColorCarousel
         colorList={selectedCar!.colors}
         onSelectedColorChange={changeCarInfo}
