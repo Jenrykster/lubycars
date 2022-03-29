@@ -7,6 +7,7 @@ import {
   HiddenMessage,
   ImageContainer,
   PriceContainer,
+  PriceLabel,
   ThreeDots,
   TitleBold,
   TitleContainer,
@@ -18,7 +19,7 @@ const Price = (props: { value: number }) => {
     <PriceContainer>
       <TitleBold>$</TitleBold>
       <TitleBold size={1.5}>{props.value}</TitleBold>
-      <TitleText size={1}>/day</TitleText>
+      <PriceLabel size={1}>/day</PriceLabel>
     </PriceContainer>
   );
 };
