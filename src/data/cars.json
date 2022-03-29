@@ -3,7 +3,7 @@
     {
       "id": 1,
       "brand": "Alfa Romeo",
-      "logo": "./ferrari/logo.png",
+      "logo": "./alfa-romeo/logo.png",
       "colors": [
         {
           "id": 1,
@@ -31,7 +31,7 @@
     {
       "id": 2,
       "brand": "Bentley",
-      "logo": "./ferrari/logo.png",
+      "logo": "./bentley/logo.png",
       "colors": [
         {
           "id": 1,
@@ -59,7 +59,7 @@
     {
       "id": 3,
       "brand": "BMW",
-      "logo": "./ferrari/logo.png",
+      "logo": "./bmw/logo.png",
       "colors": [
         {
           "id": 1,
@@ -87,7 +87,7 @@
     {
       "id": 4,
       "brand": "Bugatti",
-      "logo": "./ferrari/logo.png",
+      "logo": "./bugatti/logo.png",
       "colors": [
         {
           "id": 1,
@@ -115,7 +115,7 @@
     {
       "id": 5,
       "brand": "Chevrolet",
-      "logo": "./ferrari/logo.png",
+      "logo": "./chevrolet/logo.png",
       "colors": [
         {
           "id": 1,
@@ -171,7 +171,7 @@
     {
       "id": 7,
       "brand": "Lamborghini",
-      "logo": "./ferrari/logo.png",
+      "logo": "./lamborghini/logo.png",
       "colors": [
         {
           "id": 1,
@@ -199,7 +199,7 @@
     {
       "id": 8,
       "brand": "Mclaren",
-      "logo": "./ferrari/logo.png",
+      "logo": "./mclaren/logo.png",
       "colors": [
         {
           "id": 1,
@@ -227,7 +227,7 @@
     {
       "id": 9,
       "brand": "Mercedes Benz",
-      "logo": "./ferrari/logo.png",
+      "logo": "./mercedes-benz/logo.png",
       "colors": [
         {
           "id": 1,
@@ -255,7 +255,7 @@
     {
       "id": 10,
       "brand": "Porsche",
-      "logo": "./ferrari/logo.png",
+      "logo": "./porsche/logo.png",
       "colors": [
         {
           "id": 1,
@@ -283,7 +283,7 @@
     {
       "id": 11,
       "brand": "Porsche",
-      "logo": "./ferrari/logo.png",
+      "logo": "./porsche/logo.png",
       "colors": [
         {
           "id": 1,
@@ -311,7 +311,7 @@
     {
       "id": 12,
       "brand": "Porsche",
-      "logo": "./ferrari/logo.png",
+      "logo": "./porsche/logo.png",
       "colors": [
         {
           "id": 1,
@@ -339,7 +339,7 @@
     {
       "id": 13,
       "brand": "Porsche",
-      "logo": "./ferrari/logo.png",
+      "logo": "./porsche/logo.png",
       "colors": [
         {
           "id": 1,
@@ -367,7 +367,7 @@
     {
       "id": 14,
       "brand": "Rolls-Royce",
-      "logo": "./ferrari/logo.png",
+      "logo": "./rolls-royce/logo.png",
       "colors": [
         {
           "id": 1,

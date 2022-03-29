@@ -12,7 +12,7 @@ import {
 } from './styles';
 import { Car } from '../../shared/types';
 import { ColorCarousel } from './ColorCarousel';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 const CAR_DATA: { cars: Car[] } = require('../../data/cars.json');
 const carImages = require.context('../../assets/cars', true);
@@ -48,6 +48,7 @@ export const CarDetail = () => {
     }
     return false;
   });
+  const firstRun = useRef(true);
   const [selectedColor, setSelectedColor] = useState(selectedCar?.colors[1]);
   const [actualCarImage, setActualCarImage] = useState(
     carImages(selectedColor!.pics[1])
@@ -59,6 +60,10 @@ export const CarDetail = () => {
   };
 
   useEffect(() => {
+    if (firstRun.current) {
+      firstRun.current = false;
+      return;
+    }
     const changeImage = () => {
       setIsTransitioning(false);
       setActualCarImage(carImages(selectedColor!.pics[1]));

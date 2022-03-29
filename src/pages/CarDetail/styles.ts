@@ -30,7 +30,7 @@ export const CarInfoContainer = styled.div`
 `;
 
 export const CarLogo = styled.img`
-  width: 50px;
+  width: 25%;
   margin: 1rem;
 `;
 

@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import {
   CarCardContainer,
   CarCardGradient,
@@ -36,9 +37,11 @@ export const CarCard = (props: {
   brand: string;
   model: string;
   price: number;
+  id: number;
 }) => {
+  const nav = useNavigate();
   return (
-    <CarCardGradient>
+    <CarCardGradient onClick={() => nav('/car/' + props.id)}>
       <CarCardContainer>
         <CardData>
           <Title brand={props.brand} model={props.model} />
