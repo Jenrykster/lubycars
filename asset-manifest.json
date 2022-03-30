@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/lubycars/static/css/main.0cd6701a.css",
-    "main.js": "/lubycars/static/js/main.6dfde1bd.js",
+    "main.js": "/lubycars/static/js/main.347d592e.js",
     "static/media/gray-big.png": "/lubycars/static/media/gray-big.c2e1a39a21a0aeeece04.png",
     "static/media/yellow-big.png": "/lubycars/static/media/yellow-big.5bfd7a147dc84d8c59b6.png",
     "static/media/red-big.png": "/lubycars/static/media/red-big.79ecaa45b85b10937ffd.png",
@@ -26,10 +26,10 @@
     "static/media/amg-gts.png": "/lubycars/static/media/amg-gts.fd561c6a47662a3ba077.png",
     "index.html": "/lubycars/index.html",
     "main.0cd6701a.css.map": "/lubycars/static/css/main.0cd6701a.css.map",
-    "main.6dfde1bd.js.map": "/lubycars/static/js/main.6dfde1bd.js.map"
+    "main.347d592e.js.map": "/lubycars/static/js/main.347d592e.js.map"
   },
   "entrypoints": [
     "static/css/main.0cd6701a.css",
-    "static/js/main.6dfde1bd.js"
+    "static/js/main.347d592e.js"
   ]
 }
