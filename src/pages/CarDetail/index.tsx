@@ -1,4 +1,9 @@
+import { useEffect, useRef, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import { BsArrowLeft, BsArrowRight } from 'react-icons/bs';
+import { carImages } from '@assets';
+import { Car } from '@types';
+import { carData as CAR_DATA } from '@data';
 import {
   CarDetailContainer,
   CarInformationHeader,
@@ -13,14 +18,10 @@ import {
   GoBackButtonContainer,
   BookButtonContainer,
 } from './styles';
-import { Car } from '../../shared/types';
-import { ColorCarousel } from './ColorCarousel';
-import { useEffect, useRef, useState } from 'react';
-import { BsArrowLeft, BsArrowRight } from 'react-icons/bs';
-import { TransitionWrapper } from '../../components';
 
-const CAR_DATA: { cars: Car[] } = require('../../data/cars.json');
-const carImages = require.context('../../assets/cars', true);
+import { TransitionWrapper } from '@components';
+
+import { ColorCarousel } from './ColorCarousel';
 
 const Title = (props: { name: string; price: number }) => {
   return (

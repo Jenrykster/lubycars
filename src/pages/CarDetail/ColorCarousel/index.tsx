@@ -1,14 +1,13 @@
 import { useEffect, useState } from 'react';
-import { ArrowButton } from '../../../components';
-import { Color } from '../../../shared/types';
+import { ArrowButton } from '@components';
+import { Color } from '@types';
+import { carImages } from '@assets';
 import {
   CarouselContainer,
   CarouselDisplay,
   CarouselImage,
   CarouselSpinner,
 } from './styles';
-
-const carImages = require.context('../../../assets/cars', true);
 
 const generateInitialPositions = (listLength: number) => {
   const startPosition = Math.floor(listLength / 2);

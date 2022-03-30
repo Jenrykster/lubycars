@@ -1,9 +1,7 @@
-import React from 'react';
-import { TransitionWrapper } from '../../components';
+import { carData as CAR_DATA } from '@data';
+import { TransitionWrapper } from '@components';
 import { CarGrid } from './CarGrid';
 import { MainPageContainer } from './styles';
-
-const CAR_DATA = require('../../data/cars.json');
 
 export const MainPage = () => {
   return (

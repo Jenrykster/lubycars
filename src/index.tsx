@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { Header } from './components';
+import { Header } from '@components';
+import { CarDetail, MainPage } from '@pages';
 import './index.css';
-import { CarDetail, MainPage } from './pages';
 
 ReactDOM.render(
   <React.StrictMode>

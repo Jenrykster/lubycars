@@ -1,8 +1,7 @@
-import { Car } from '../../../shared/types';
+import { Car } from '@types';
+import { carImages } from '@assets';
 import { CarCard } from './CarCard';
 import { CarGridContainer } from './styles';
-
-const carImages = require.context('../../../assets/cars', true);
 
 export const CarGrid = (props: { cars: Car[] }) => {
   const generateCarComponents = () => {
